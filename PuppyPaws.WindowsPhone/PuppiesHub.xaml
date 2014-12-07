@@ -1,0 +1,63 @@
+﻿<Page
+    x:Class="PuppyPaws.PuppiesHub"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:PuppyPaws"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:ClientCommon="using:PuppyPaws.ClientCommon"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Page.Resources>
+        <ClientCommon:PageListViewModel x:Key="HuskyListViewModel"
+                                        Tag="husky"
+                                        ImageCount="5"
+                                        InstagramContext="{StaticResource InstagramContext}" />
+
+        <ClientCommon:PageListViewModel x:Key="LabListViewModel"
+                                        Tag="labpuppy"
+                                        ImageCount="5"
+                                        InstagramContext="{StaticResource InstagramContext}" />
+
+        <ClientCommon:PageListViewModel x:Key="StBernardListViewModel"
+                                        Tag="stbernard"
+                                        ImageCount="5"
+                                        InstagramContext="{StaticResource InstagramContext}" />
+
+        <DataTemplate x:Key="SectionDataTemplate">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                <Button Grid.Row="0"
+                        Command="{Binding RefreshCmd}"
+                        Content="Refresh" />
+                
+                <ListBox ItemsSource="{Binding ImageList}"
+                         Grid.Row="1">
+                    <ListBox.ItemTemplate>
+                        <DataTemplate>
+                            <Image Source="{Binding StandardResolution}" />
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
+                </ListBox>
+            </Grid>
+        </DataTemplate>
+
+    </Page.Resources>
+
+    <Grid x:Name="LayoutRoot">
+        <Hub x:Name="Hub" x:Uid="Hub" Header="puppies">
+            <HubSection Header="Huskies" DataContext="{StaticResource HuskyListViewModel}"
+                        ContentTemplate="{StaticResource SectionDataTemplate}" />
+
+            <HubSection Header="Labs" DataContext="{StaticResource LabListViewModel}"
+                        ContentTemplate="{StaticResource SectionDataTemplate}" />
+
+            <HubSection Header="St Bernards" DataContext="{StaticResource StBernardListViewModel}"
+                        ContentTemplate="{StaticResource SectionDataTemplate}" />
+        </Hub>
+    </Grid>
+</Page>

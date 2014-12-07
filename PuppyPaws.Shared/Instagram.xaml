@@ -1,0 +1,11 @@
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:PuppyPaws"
+    xmlns:DataContracts="using:PuppyPaws.DataContracts">
+    
+    <DataContracts:InstagramContext x:Key="InstagramContext"
+                                    ClientId="043af0fe8cc14dfb8303eee4910c3cae" 
+                                    ClientSecret="89b93f95234f4188afc66e962aaefc6f" />
+    
+</ResourceDictionary>
