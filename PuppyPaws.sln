@@ -27,6 +27,13 @@ Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "PuppyPaws.Shared", "PuppyPa
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PuppyPaws.WindowsPhone", "PuppyPaws.WindowsPhone\PuppyPaws.WindowsPhone.csproj", "{056C7B80-7AF1-434F-8A3F-589A09FE68DE}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{AE149757-90DA-428A-A641-26651FB3D5C1}"
+	ProjectSection(SolutionItems) = preProject
+		.nuget\NuGet.Config = .nuget\NuGet.Config
+		.nuget\NuGet.exe = .nuget\NuGet.exe
+		.nuget\NuGet.targets = .nuget\NuGet.targets
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
 		PuppyPaws.Shared\PuppyPaws.Shared.projitems*{10f42a40-d5ff-423c-87e6-405948ecb9ff}*SharedItemsImports = 4
