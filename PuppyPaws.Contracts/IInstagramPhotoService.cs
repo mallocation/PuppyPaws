@@ -9,7 +9,6 @@ namespace PuppyPaws.Contracts
 {
     public interface IInstagramPhotoService
     {
-        Task<Media[]> FindRecentMediaByTag(string tag, int count, InstagramContext context);
-        
+        Task<Media[]> FindRecentMediaByTag(string tag, int count, InstagramContext context);        
     }
 }
